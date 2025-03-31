@@ -9,7 +9,7 @@ import { booleanPointOnLine as isPointOnLine } from "@turf/boolean-point-on-line
 /**
  * booleanValid checks if the geometry is a valid according to the OGC Simple Feature Specification.
  *
- * @name booleanValid
+ * @function
  * @param {Geometry|Feature<any>} feature GeoJSON Feature or Geometry
  * @returns {boolean} true/false
  * @example
@@ -90,7 +90,7 @@ function booleanValid(feature: Feature<any> | Geometry) {
 
 function checkRingsClose(geom: Position[]) {
   return (
-    geom[0][0] === geom[geom.length - 1][0] ||
+    geom[0][0] === geom[geom.length - 1][0] &&
     geom[0][1] === geom[geom.length - 1][1]
   );
 }
